@@ -1,9 +1,10 @@
 'use server';
 
+import { convertDocToObj } from '@/libs/helpers';
 import connectMongoDB from '@/libs/mongodb';
 import Topic from '@/models/topic';
 import { revalidatePath } from 'next/cache';
-import { convertDocToObj } from '@/libs/helpers';
+
 // 1. 토픽 생성: Create (POST)
 export async function createTopic(title: string, description: string) {
   try {
@@ -15,6 +16,7 @@ export async function createTopic(title: string, description: string) {
     throw new Error(`토픽 생성에 실패했습니다: ${error}`);
   }
 }
+
 // 2. 토픽 수정: Update (PUT)
 export async function updateTopic(
   id: string,
@@ -35,6 +37,7 @@ export async function updateTopic(
     throw new Error(`토픽 수정에 실패했습니다: ${error}`);
   }
 }
+
 // 3. 단일 토픽 조회 (GET)
 export async function getTopic(id: string) {
   try {
@@ -46,6 +49,7 @@ export async function getTopic(id: string) {
     throw new Error(`토픽 조회에 실패했습니다: ${error}`);
   }
 }
+
 // 4. 모든 토픽 조회 (GET)
 export async function getAllTopics() {
   try {
@@ -57,6 +61,7 @@ export async function getAllTopics() {
     throw new Error(`토픽 목록 조회에 실패했습니다: ${error}`);
   }
 }
+
 // 5. 토픽 삭제: DELETE
 export async function deleteTopic(id: string) {
   try {

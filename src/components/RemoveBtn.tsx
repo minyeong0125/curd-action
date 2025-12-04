@@ -1,12 +1,9 @@
 'use client';
-
 import { deleteTopic } from '@/actions/topicActions';
 import { HiOutlineTrash } from 'react-icons/hi';
-
 export default function RemoveBtn({ id }: { id: string }) {
   const handleDelete = async () => {
     const confirmed = confirm('이 토픽을 삭제하시겠습니까?');
-
     if (confirmed) {
       try {
         await deleteTopic(id);
@@ -16,7 +13,6 @@ export default function RemoveBtn({ id }: { id: string }) {
       }
     }
   };
-
   return (
     <button onClick={handleDelete} className="text-red-400">
       <HiOutlineTrash size={24} />

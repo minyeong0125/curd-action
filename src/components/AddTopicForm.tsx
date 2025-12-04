@@ -24,7 +24,7 @@ export default function AddTopicForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
-        className="border border-slate-500 px-8 py-2"
+        className="border border-slate-500 p-4"
         type="text"
         placeholder="토픽 제목"
         value={title}
@@ -32,7 +32,7 @@ export default function AddTopicForm() {
       />
 
       <textarea
-        className="border border-slate-500 px-8 py-2"
+        className="border border-slate-500 p-4 h-32"
         placeholder="토픽 설명"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
@@ -40,7 +40,7 @@ export default function AddTopicForm() {
 
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        className="bg-green-800 font-bold text-white py-3 px-6 w-fit rounded-md"
       >
         토픽 추가하기
       </button>

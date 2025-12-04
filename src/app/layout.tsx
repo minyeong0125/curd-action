@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'MongoDB CURD',
+  title: 'MongoDB CRUD',
   description: 'Create, Read, Update, and Delete in MongoDB',
 };
 
